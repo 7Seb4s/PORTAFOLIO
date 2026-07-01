@@ -1,0 +1,131 @@
+.process {
+  background: var(--navy);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.process::before {
+  content: '';
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: rgba(217, 119, 47, 0.18);
+  filter: blur(120px);
+  top: -140px;
+  right: -80px;
+}
+
+.process .container {
+  position: relative;
+  z-index: 1;
+}
+
+.process__head {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto 54px;
+}
+
+.process__head .section-title {
+  color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.eyebrow--light {
+  color: var(--terra);
+  background: rgba(217, 119, 47, 0.14);
+  border-color: rgba(217, 119, 47, 0.3);
+}
+
+.eyebrow--light::before {
+  background: var(--terra);
+}
+
+.process__lead {
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 auto;
+}
+
+.process__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.step {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.step:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.step__n {
+  font-family: var(--font-head);
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: var(--terra);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.step h3 {
+  color: #fff;
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+
+.step p {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.92rem;
+}
+
+.process__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin-top: 60px;
+  padding-top: 46px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat__value {
+  display: block;
+  font-family: var(--font-head);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 800;
+  color: var(--sage);
+  line-height: 1;
+}
+
+.stat__label {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 860px) {
+  .process__grid,
+  .process__stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 460px) {
+  .process__grid {
+    grid-template-columns: 1fr;
+  }
+}

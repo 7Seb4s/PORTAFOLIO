@@ -1,0 +1,186 @@
+.about {
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.about__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about__copy .eyebrow {
+  margin-bottom: 4px;
+}
+
+.about__points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 28px 0 32px;
+}
+
+.about__points li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 500;
+  color: var(--navy);
+}
+
+.about__check {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: var(--sage-soft);
+  color: var(--sage);
+}
+
+/* ---------- Pila en abanico (estilo imagen 2) ---------- */
+.about__visual {
+  perspective: 1600px;
+  min-height: 460px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deck {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  transform-style: preserve-3d;
+  transform: rotateX(12deg) rotateY(-22deg) rotateZ(-3deg);
+  animation: deck-float 8s ease-in-out infinite;
+}
+
+.deck__card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 290px;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  box-shadow: 0 40px 60px -30px rgba(29, 43, 58, 0.55);
+  overflow: hidden;
+  animation: card-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.deck__card:nth-child(1) { translate: 74px -86px; z-index: 1; animation-delay: 0.05s; }
+.deck__card:nth-child(2) { translate: 37px -43px; z-index: 2; animation-delay: 0.15s; }
+.deck__card:nth-child(3) { translate: 0 0;        z-index: 3; animation-delay: 0.25s; }
+.deck__card:nth-child(4) { translate: -37px 43px; z-index: 4; animation-delay: 0.35s; }
+.deck__card:nth-child(5) { translate: -74px 86px; z-index: 5; animation-delay: 0.45s; }
+
+.deck__bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 11px 14px;
+  background: var(--beige-soft);
+  border-bottom: 1px solid var(--border);
+}
+.deck__bar i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d8d2c6;
+}
+.deck__bar i:first-child { background: var(--terra); }
+.deck__bar i:nth-child(2) { background: #e8c14a; }
+.deck__bar i:nth-child(3) { background: var(--sage); }
+.deck__url {
+  flex: 1;
+  height: 10px;
+  margin-left: 6px;
+  border-radius: 5px;
+  background: var(--beige);
+}
+
+.deck__body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.deck__hero {
+  height: 68px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--sage), #5a9a86);
+}
+
+.deck__row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.deck__ln {
+  height: 9px;
+  border-radius: 5px;
+  background: var(--beige);
+  flex: 1;
+}
+.deck__ln--short { max-width: 40%; }
+.deck__ln--mid { max-width: 55%; }
+
+.deck__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.deck__grid span {
+  height: 46px;
+  border-radius: 9px;
+  background: var(--sage-soft);
+}
+.deck__grid span:nth-child(2) { background: rgba(217, 119, 47, 0.16); }
+.deck__grid span:nth-child(3) { background: var(--beige); }
+
+.deck__chip {
+  width: 64px;
+  height: 24px;
+  border-radius: 999px;
+  background: var(--terra);
+  flex-shrink: 0;
+}
+
+/* Acentos por tarjeta */
+.deck__card--navy .deck__hero { background: linear-gradient(135deg, var(--navy), #2f4258); }
+.deck__card--terra .deck__hero { background: linear-gradient(135deg, var(--terra), #e69a5c); }
+.deck__card--light .deck__hero { background: linear-gradient(135deg, #cfc9bc, #e6e1d6); }
+.deck__card--sage2 .deck__hero { background: linear-gradient(135deg, #4f9683, var(--sage)); }
+
+@keyframes card-in {
+  from { opacity: 0; scale: 0.82; }
+  to { opacity: 1; scale: 1; }
+}
+
+@keyframes deck-float {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -14px; }
+}
+
+@media (max-width: 900px) {
+  .about__inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .about__visual {
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 560px) {
+  .deck {
+    transform: rotateX(10deg) rotateY(-18deg) rotateZ(-3deg) scale(0.82);
+  }
+}

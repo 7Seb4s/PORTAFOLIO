@@ -1,0 +1,12 @@
+node_modules
+dist
+dist-ssr
+*.local
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+
+# Imágenes de referencia (no forman parte del sitio)
+imagen 1.png
+imagen 2.png
+.claude/

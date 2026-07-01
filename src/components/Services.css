@@ -1,0 +1,172 @@
+.services {
+  background: var(--bg-alt);
+  position: relative;
+  overflow: hidden;
+}
+
+.services::before,
+.services::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.services::before {
+  width: 420px;
+  height: 420px;
+  background: rgba(217, 119, 47, 0.12);
+  top: -120px;
+  left: -120px;
+}
+
+.services::after {
+  width: 380px;
+  height: 380px;
+  background: rgba(59, 122, 103, 0.12);
+  bottom: -140px;
+  right: -120px;
+}
+
+.services .container {
+  position: relative;
+  z-index: 1;
+}
+
+.services__head {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 54px;
+}
+
+.services__head .eyebrow {
+  margin-bottom: 4px;
+}
+
+.services__head .section-lead {
+  margin: 0 auto;
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.service-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--terra);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 26px 50px -24px rgba(29, 43, 58, 0.4);
+  border-color: transparent;
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-card__icon {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  color: #fff;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, var(--sage), #4f9683);
+  box-shadow: 0 12px 22px -12px rgba(59, 122, 103, 0.8);
+  transition: transform 0.25s ease;
+}
+
+/* Íconos alternados terracota / salvia / navy para dar vida */
+.service-card:nth-child(3n + 1) .service-card__icon {
+  background: linear-gradient(135deg, var(--terra), #e6944f);
+  box-shadow: 0 12px 22px -12px rgba(217, 119, 47, 0.85);
+}
+.service-card:nth-child(3n + 3) .service-card__icon {
+  background: linear-gradient(135deg, var(--navy), #33475e);
+  box-shadow: 0 12px 22px -12px rgba(29, 43, 58, 0.7);
+}
+
+.service-card:hover .service-card__icon {
+  transform: scale(1.08) rotate(-4deg);
+}
+
+.service-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  color: var(--text-muted);
+  font-size: 0.96rem;
+  margin-bottom: 18px;
+}
+
+.service-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.service-card__tags span {
+  font-family: var(--font-head);
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--sage);
+  background: var(--sage-soft);
+  border: 1px solid rgba(59, 122, 103, 0.2);
+  padding: 4px 11px;
+  border-radius: 999px;
+}
+
+.service-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--terra);
+  transition: gap 0.2s ease;
+}
+
+.service-card__link:hover {
+  gap: 12px;
+}
+
+@media (max-width: 940px) {
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 620px) {
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+}
