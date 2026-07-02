@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { brand } from '../data'
-import { ArrowIcon, CheckIcon, MailIcon, PhoneIcon, PinIcon } from './Icons'
+import { ArrowIcon, CheckIcon, MailIcon, PhoneIcon, PinIcon, WhatsAppIcon } from './Icons'
 import './Contact.css'
 
 export default function Contact() {
@@ -8,7 +8,25 @@ export default function Contact() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    // TODO: conecta aquí tu backend, Formspree, o servicio de email.
+    const data = new FormData(e.target)
+    const name = data.get('name')?.trim()
+    const email = data.get('email')?.trim()
+    const phone = data.get('phone')?.trim()
+    const service = data.get('service')
+    const message = data.get('message')?.trim()
+
+    const lines = [
+      `Hola ${brand.name}, quiero cotizar un proyecto.`,
+      '',
+      `*Nombre:* ${name || '-'}`,
+      `*Email:* ${email || '-'}`,
+      phone ? `*Teléfono:* ${phone}` : null,
+      service ? `*Servicio:* ${service}` : null,
+      message ? `*Proyecto:* ${message}` : null,
+    ].filter(Boolean)
+
+    const url = `https://wa.me/${brand.whatsapp}?text=${encodeURIComponent(lines.join('\n'))}`
+    window.open(url, '_blank', 'noopener,noreferrer')
     setSent(true)
   }
 
@@ -40,6 +58,16 @@ export default function Contact() {
                 </span>
               </li>
               <li>
+                <span className="contact__ico contact__ico--wa"><WhatsAppIcon /></span>
+                <a
+                  href={`https://wa.me/${brand.whatsapp}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Escríbenos por WhatsApp
+                </a>
+              </li>
+              <li>
                 <span className="contact__ico"><PinIcon /></span>
                 {brand.location}
               </li>
@@ -50,8 +78,19 @@ export default function Contact() {
             {sent ? (
               <div className="contact__success">
                 <div className="contact__success-ico"><CheckIcon /></div>
-                <h3>¡Mensaje enviado!</h3>
-                <p>Gracias por escribirnos. Te contactaremos muy pronto.</p>
+                <h3>¡Te llevamos a WhatsApp!</h3>
+                <p>
+                  Abrimos WhatsApp con tu mensaje listo para enviar. Si no se
+                  abrió,{' '}
+                  <a
+                    href={`https://wa.me/${brand.whatsapp}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    escríbenos aquí
+                  </a>
+                  .
+                </p>
               </div>
             ) : (
               <form className="contact__form" onSubmit={handleSubmit}>
@@ -86,7 +125,7 @@ export default function Contact() {
                   <textarea name="message" rows="3" placeholder="Describe tu idea u objetivo..." />
                 </div>
                 <button type="submit" className="btn btn-primary contact__submit">
-                  Enviar mensaje <ArrowIcon />
+                  Enviar por WhatsApp <ArrowIcon />
                 </button>
                 <p className="contact__note">
                   Al enviar aceptas ser contactado por {brand.name}.

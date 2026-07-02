@@ -76,6 +76,11 @@
   font-size: 1.05rem;
 }
 
+.contact__ico--wa {
+  background: rgba(37, 211, 102, 0.16);
+  color: #25d366;
+}
+
 .contact__phones {
   align-items: flex-start !important;
 }

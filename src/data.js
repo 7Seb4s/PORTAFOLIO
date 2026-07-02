@@ -11,6 +11,7 @@ export const brand = {
   tagline: 'Software, webs y plataformas a medida',
   email: 'sitalostudio@gmail.com',
   phones: ['+51 952 982 715', '+51 914 029 218'],
+  whatsapp: '51914029218', // solo dígitos, para el enlace wa.me
   location: 'Lima, Perú',
   social: {
     instagram: '#',
