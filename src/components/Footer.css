@@ -38,6 +38,10 @@
   margin-bottom: 20px;
 }
 
+.footer .brand__mark {
+  height: 76px;
+}
+
 .footer__brand p {
   font-size: 0.96rem;
   line-height: 1.7;

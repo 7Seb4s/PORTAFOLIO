@@ -1,5 +1,5 @@
 import { brand, nav } from '../data'
-import { SocialIcon, ArrowIcon } from './Icons'
+import { ArrowIcon } from './Icons'
 import './Footer.css'
 
 export default function Footer() {
@@ -20,26 +20,12 @@ export default function Footer() {
         <div className="footer__inner">
           <div className="footer__brand reveal">
             <a href="#top" className="brand">
-              <span className="brand__mark">S</span>
-              <span className="brand__name">{brand.name}</span>
+              <img src="/logo.webp" alt={brand.name} className="brand__mark" />
             </a>
             <p>
               {brand.tagline}. Desarrollo web y software a medida para empresas
               en crecimiento.
             </p>
-            <div className="footer__social">
-              {Object.keys(brand.social).map((s) => (
-                <a
-                  key={s}
-                  href={brand.social[s]}
-                  aria-label={s}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <SocialIcon name={s} />
-                </a>
-              ))}
-            </div>
           </div>
 
           <div className="footer__cols">

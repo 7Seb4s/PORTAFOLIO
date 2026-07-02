@@ -17,8 +17,7 @@ export default function Header() {
     <header className={`header ${scrolled ? 'is-scrolled' : ''}`}>
       <div className="container header__inner">
         <a href="#top" className="brand" onClick={() => setOpen(false)}>
-          <span className="brand__mark">S</span>
-          <span className="brand__name">{brand.name}</span>
+          <img src="/logo.webp" alt={brand.name} className="brand__mark" />
         </a>
 
         <nav className={`header__nav ${open ? 'is-open' : ''}`}>

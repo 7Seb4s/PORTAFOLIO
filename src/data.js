@@ -9,7 +9,7 @@
 export const brand = {
   name: 'Sitalo',
   tagline: 'Software, webs y plataformas a medida',
-  email: 'hola@sitalo.pe',
+  email: 'sitalostudio@gmail.com',
   phones: ['+51 952 982 715', '+51 914 029 218'],
   location: 'Lima, Perú',
   social: {
