@@ -17,7 +17,7 @@
 .services::before {
   width: 420px;
   height: 420px;
-  background: rgba(217, 119, 47, 0.12);
+  background: rgba(42, 74, 127, 0.12);
   top: -120px;
   left: -120px;
 }
@@ -103,8 +103,8 @@
 
 /* Íconos alternados terracota / salvia / navy para dar vida */
 .service-card:nth-child(3n + 1) .service-card__icon {
-  background: linear-gradient(135deg, var(--terra), #e6944f);
-  box-shadow: 0 12px 22px -12px rgba(217, 119, 47, 0.85);
+  background: linear-gradient(135deg, var(--terra), #6f8fc4);
+  box-shadow: 0 12px 22px -12px rgba(42, 74, 127, 0.85);
 }
 .service-card:nth-child(3n + 3) .service-card__icon {
   background: linear-gradient(135deg, var(--navy), #33475e);

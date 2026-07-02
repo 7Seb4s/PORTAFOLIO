@@ -11,7 +11,7 @@
   width: 420px;
   height: 420px;
   border-radius: 50%;
-  background: rgba(217, 119, 47, 0.18);
+  background: rgba(42, 74, 127, 0.18);
   filter: blur(120px);
   top: -140px;
   right: -80px;
@@ -36,8 +36,8 @@
 
 .eyebrow--light {
   color: var(--terra);
-  background: rgba(217, 119, 47, 0.14);
-  border-color: rgba(217, 119, 47, 0.3);
+  background: rgba(42, 74, 127, 0.14);
+  border-color: rgba(42, 74, 127, 0.3);
 }
 
 .eyebrow--light::before {

@@ -5,6 +5,7 @@ import './Tech.css'
 
 export default function Tech() {
   const [open, setOpen] = useState(0)
+  const [hovered, setHovered] = useState(null)
 
   return (
     <section className="tech" id="tecnologia">
@@ -20,7 +21,29 @@ export default function Tech() {
           </p>
           <div className="tech__stack">
             {tech.map((t) => (
-              <span key={t} className="tech__pill">{t}</span>
+              <button
+                key={t.name}
+                type="button"
+                className={`tech__pill ${hovered === t.name ? 'is-active' : ''}`}
+                onMouseEnter={() => setHovered(t.name)}
+                onMouseLeave={() => setHovered(null)}
+                onClick={() => setHovered(hovered === t.name ? null : t.name)}
+              >
+                {t.name}
+
+              <span className="tech__holo" aria-hidden="true">
+                  <span className="tech__holo-beam" style={{ '--tc': t.color }} />
+                  {/* Busca esta sección en tu mapeo y reemplázala por esto: */}
+                  <span className="tech__holo-icon" style={{ '--tc': t.color }}>
+                   <img 
+                    src={t.image} 
+                    alt={`Logo de ${t.name}`} 
+                    className="tech__icon-img"
+                    loading="lazy"
+                  />
+                </span>
+              </span>
+              </button>
             ))}
           </div>
         </div>

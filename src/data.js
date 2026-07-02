@@ -10,7 +10,7 @@ export const brand = {
   name: 'Sitalo',
   tagline: 'Software, webs y plataformas a medida',
   email: 'hola@sitalo.pe',
-  phone: '+51 999 999 999',
+  phones: ['+51 952 982 715', '+51 914 029 218'],
   location: 'Lima, Perú',
   social: {
     instagram: '#',
@@ -26,6 +26,21 @@ export const nav = [
   { label: 'Portafolio', href: '#portafolio' },
   { label: 'Tecnología', href: '#tecnologia' },
   { label: 'Contacto', href: '#contacto' },
+]
+
+export const team = [
+  {
+    name: 'Kevin',
+    role: 'Frontend Developer',
+    github: 'KevinChavez025',
+    avatar: 'https://github.com/KevinChavez025.png',
+  },
+  {
+    name: 'Seba',
+    role: 'Backend Developer',
+    github: '7Seb4s',
+    avatar: 'https://github.com/7Seb4s.png',
+  },
 ]
 
 export const services = [
@@ -90,78 +105,50 @@ export const steps = [
   },
 ]
 
-export const categories = ['Todos', 'Web', 'App / SaaS', 'ERP', 'Branding']
+export const categories = ['Todos', 'Web']
 
-/* Imágenes de ejemplo (Unsplash). Reemplázalas por las tuyas:
-   coloca tus archivos en /public y usa image: '/portfolio/mi-foto.jpg' */
+/* Proyectos reales del equipo. Agrega más objetos aquí cuando tengan
+   nuevos trabajos — solo respeta esta misma estructura. */
 export const projects = [
   {
-    title: 'Villa Estancia',
-    category: 'ERP',
-    type: 'Sistema de gestión de compras e inventario',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80&auto=format&fit=crop',
-  },
-  {
-    title: 'Money Club',
-    category: 'App / SaaS',
-    type: 'Portal de inversiones y afiliados',
-    image: 'https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?w=800&q=80&auto=format&fit=crop',
-  },
-  {
-    title: 'Clínica Santa Isabel',
+    title: 'Piolito',
     category: 'Web',
-    type: 'Web corporativa + reserva de citas',
-    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80&auto=format&fit=crop',
+    type: 'Landing page — fábrica de calzado infantil',
+    image: 'piolitovista.webp',
+    url: 'http://www.piolito.com/',
   },
   {
-    title: 'Smart M2M',
-    category: 'App / SaaS',
-    type: 'Panel de monitoreo IoT en tiempo real',
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80&auto=format&fit=crop',
-  },
-  {
-    title: 'Importadora Jordan',
+    title: 'VetSnow',
     category: 'Web',
-    type: 'E-commerce a medida',
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80&auto=format&fit=crop',
+    type: 'Web para clínica veterinaria — citas y servicios',
+    image: 'veterinaria.webp',
+    url: 'https://clever-cupcake-59f1c6.netlify.app/',
   },
   {
-    title: 'Risabor',
-    category: 'Branding',
-    type: 'Identidad y diseño de marca',
-    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80&auto=format&fit=crop',
-  },
-  {
-    title: 'LogiTrack Perú',
-    category: 'ERP',
-    type: 'Control de flota y rutas de reparto',
-    image: 'https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=800&q=80&auto=format&fit=crop',
-  },
-  {
-    title: 'EduNova',
-    category: 'App / SaaS',
-    type: 'Plataforma de cursos online',
-    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80&auto=format&fit=crop',
-  },
-  {
-    title: 'Café del Valle',
-    category: 'Branding',
-    type: 'Branding + landing de producto',
-    image: 'https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=800&q=80&auto=format&fit=crop',
+    title: 'El Barberiolog',
+    category: 'Web',
+    type: 'Web de barbería de autor',
+    image: 'barberia.webp',
+    url: 'https://loquacious-pudding-f7dbbd.netlify.app/',
   },
 ]
 
 export const stats = [
-  { value: '+10', label: 'años de experiencia' },
-  { value: '+80', label: 'proyectos entregados' },
-  { value: '98%', label: 'clientes que repiten' },
-  { value: '24/7', label: 'soporte disponible' },
+  { value: '2', label: 'desarrolladores full-stack' },
+  { value: '100%', label: 'código a medida, sin plantillas' },
+  { value: '24/7', label: 'comunicación directa con el cliente' },
+  { value: '48h', label: 'tiempo de respuesta' },
 ]
 
 export const tech = [
-  'React', 'Angular', 'Node.js', 'TypeScript', 'Python',
-  'PostgreSQL', 'AWS', 'Docker', 'Figma', 'Next.js',
-]
+  { name: 'React', color: '#61DAFB', image: 'https://api.iconify.design/simple-icons:react.svg?color=%2361DAFB' },
+  { name: 'Angular', color: '#DD0031', image: 'https://api.iconify.design/simple-icons:angular.svg?color=%23DD0031' },
+  { name: 'Node.js', color: '#3C873A', image: 'https://api.iconify.design/simple-icons:nodedotjs.svg?color=%233C873A' },
+  { name: 'TypeScript', color: '#3178C6', image: 'https://api.iconify.design/simple-icons:typescript.svg?color=%233178C6' },
+  { name: 'PostgreSQL', color: '#336791', image: 'https://api.iconify.design/simple-icons:postgresql.svg?color=%23336791' },
+  { name: 'Docker', color: '#2496ED', image: 'https://api.iconify.design/simple-icons:docker.svg?color=%232496ED' },
+  { name: 'Figma', color: '#A259FF', image: 'https://api.iconify.design/simple-icons:figma.svg?color=%23A259FF' },
+];
 
 export const faqs = [
   {

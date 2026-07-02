@@ -30,7 +30,7 @@ export default function App() {
 
       <a
         className="whatsapp-fab"
-        href={`https://wa.me/${brand.phone.replace(/\D/g, '')}`}
+        href={`https://wa.me/${brand.phones[0].replace(/\D/g, '')}`}
         target="_blank"
         rel="noreferrer"
         aria-label="Escríbenos por WhatsApp"

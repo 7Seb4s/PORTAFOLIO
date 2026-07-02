@@ -71,9 +71,23 @@
   height: 40px;
   flex-shrink: 0;
   border-radius: 11px;
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--terra);
+  background: rgba(255, 255, 255, 0.12);
+  color: #9db8e8;
   font-size: 1.05rem;
+}
+
+.contact__phones {
+  align-items: flex-start !important;
+}
+
+.contact__phones .contact__ico {
+  margin-top: 2px;
+}
+
+.contact__phones-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .contact__form-wrap {

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { brand } from '../data'
-import { ArrowIcon, CheckIcon } from './Icons'
+import { ArrowIcon, CheckIcon, MailIcon, PhoneIcon, PinIcon } from './Icons'
 import './Contact.css'
 
 export default function Contact() {
@@ -28,15 +28,19 @@ export default function Contact() {
 
             <ul className="contact__list">
               <li>
-                <span className="contact__ico">✉</span>
+                <span className="contact__ico"><MailIcon /></span>
                 <a href={`mailto:${brand.email}`}>{brand.email}</a>
               </li>
-              <li>
-                <span className="contact__ico">☎</span>
-                <a href={`tel:${brand.phone.replace(/\s/g, '')}`}>{brand.phone}</a>
+              <li className="contact__phones">
+                <span className="contact__ico"><PhoneIcon /></span>
+                <span className="contact__phones-list">
+                  {brand.phones.map((p) => (
+                    <a href={`tel:${p.replace(/\s/g, '')}`} key={p}>{p}</a>
+                  ))}
+                </span>
               </li>
               <li>
-                <span className="contact__ico">⌖</span>
+                <span className="contact__ico"><PinIcon /></span>
                 {brand.location}
               </li>
             </ul>

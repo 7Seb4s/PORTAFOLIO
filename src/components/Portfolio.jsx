@@ -55,7 +55,11 @@ export default function Portfolio() {
               <div className="project__body">
                 <h3>{p.title}</h3>
                 <p>{p.type}</p>
-                <a href="#contacto" className="project__link" aria-label={`Ver ${p.title}`}>
+                <a href={p.url || '#contacto'}
+                  className="project__link"
+                  aria-label={`Ver ${p.title}`}
+                  target={p.url ? '_blank' : undefined}
+                  rel={p.url ? 'noreferrer' : undefined}>
                   <ArrowIcon />
                 </a>
               </div>

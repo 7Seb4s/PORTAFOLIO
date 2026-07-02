@@ -69,7 +69,9 @@ export default function Footer() {
               <h4>Contacto</h4>
               <ul>
                 <li><a href={`mailto:${brand.email}`}>{brand.email}</a></li>
-                <li><a href={`tel:${brand.phone.replace(/\s/g, '')}`}>{brand.phone}</a></li>
+                {brand.phones.map((p) => (
+                  <li key={p}><a href={`tel:${p.replace(/\s/g, '')}`}>{p}</a></li>
+                ))}
                 <li>{brand.location}</li>
               </ul>
             </div>

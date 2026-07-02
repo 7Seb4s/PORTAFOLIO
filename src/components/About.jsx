@@ -1,4 +1,5 @@
-import { CheckIcon, ArrowIcon } from './Icons'
+import { CheckIcon, ArrowIcon, SocialIcon } from './Icons'
+import { team } from '../data'
 import './About.css'
 
 const points = [
@@ -8,26 +9,22 @@ const points = [
   'Acompañamiento después del lanzamiento',
 ]
 
-/* Una tarjeta = un "screenshot" de sitio (mini navegador) */
-function Card({ accent }) {
+/* Tarjeta de un miembro del equipo */
+function TeamCard({ member }) {
   return (
-    <div className={`deck__card deck__card--${accent}`}>
-      <div className="deck__bar"><i /><i /><i /><span className="deck__url" /></div>
-      <div className="deck__body">
-        <div className="deck__hero" />
-        <div className="deck__row">
-          <span className="deck__ln" />
-          <span className="deck__ln deck__ln--short" />
-        </div>
-        <div className="deck__grid">
-          <span /><span /><span />
-        </div>
-        <div className="deck__row">
-          <span className="deck__ln deck__ln--mid" />
-          <span className="deck__chip" />
-        </div>
-      </div>
-    </div>
+    <a
+      className="team-card"
+      href={`https://github.com/${member.github}`}
+      target="_blank"
+      rel="noreferrer"
+    >
+      <img className="team-card__avatar" src={member.avatar} alt={member.name} />
+      <span className="team-card__name">{member.name}</span>
+      <span className="team-card__role">{member.role}</span>
+      <span className="team-card__github">
+        <SocialIcon name="github" /> {member.github}
+      </span>
+    </a>
   )
 }
 
@@ -61,12 +58,10 @@ export default function About() {
         </div>
 
         <div className="about__visual reveal">
-          <div className="deck">
-            <Card accent="sage" />
-            <Card accent="navy" />
-            <Card accent="terra" />
-            <Card accent="light" />
-            <Card accent="sage2" />
+          <div className="team-grid">
+            {team.map((member) => (
+              <TeamCard member={member} key={member.name} />
+            ))}
           </div>
         </div>
       </div>
