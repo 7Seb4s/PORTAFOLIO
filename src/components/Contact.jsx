@@ -37,7 +37,7 @@ export default function Contact() {
           <div className="contact__info">
             <span className="eyebrow eyebrow--light">Contacto</span>
             <h2 className="section-title">
-              Hagamos algo <span className="accent">grande</span>
+              Hagamos realidad <span className="accent">tu proyecto</span>
             </h2>
             <p className="contact__lead">
               Cuéntanos tu idea y te ayudamos a aterrizarla. Definimos alcance,

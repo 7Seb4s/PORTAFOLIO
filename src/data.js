@@ -26,7 +26,6 @@ export const nav = [
   { label: 'Nosotros', href: '#nosotros' },
   { label: 'Portafolio', href: '#portafolio' },
   { label: 'Tecnología', href: '#tecnologia' },
-  { label: 'Contacto', href: '#contacto' },
 ]
 
 export const team = [
@@ -138,7 +137,7 @@ export const stats = [
   { value: '2', label: 'desarrolladores full-stack' },
   { value: '100%', label: 'código a medida, sin plantillas' },
   { value: '24/7', label: 'comunicación directa con el cliente' },
-  { value: '48h', label: 'tiempo de respuesta' },
+  { value: '3+', label: 'proyectos entregados' },
 ]
 
 export const tech = [
@@ -154,18 +153,18 @@ export const tech = [
 export const faqs = [
   {
     q: '¿Cuánto cuesta desarrollar mi proyecto?',
-    a: 'Depende del alcance, funcionalidades y nivel de personalización. Tras una reunión inicial te enviamos una propuesta clara con precio y tiempos.',
+    a: 'Trabajamos con paquetes flexibles que se adaptan a tu presupuesto y plazos, desde soluciones rápidas ("turbo") hasta proyectos más completos. Tras una reunión inicial te enviamos una propuesta clara con precio y tiempos.',
   },
   {
     q: '¿Cuánto tiempo toma el desarrollo?',
-    a: 'Una landing puede estar lista en 1–2 semanas; una web corporativa entre 3–5 semanas; y un sistema o SaaS depende del alcance, normalmente desde 6 semanas.',
+    a: 'Una landing puede estar lista en 1–2 semanas; una web corporativa entre 3–5 semanas; y un sistema o SaaS depende del alcance, normalmente desde 6 semanas. También ofrecemos entregas más rápidas para proyectos urgentes.',
   },
   {
     q: '¿Trabajan a medida o con plantillas?',
     a: 'Trabajamos 100% a medida según los objetivos de tu negocio. Para presupuestos ajustados también ofrecemos soluciones base optimizadas.',
   },
   {
-    q: '¿Ofrecen soporte después de lanzar?',
+    q: '¿Incluyen soporte posterior al lanzamiento?',
     a: 'Sí. Brindamos garantía, mantenimiento y soporte evolutivo para mantener tu plataforma estable y creciendo con tu negocio.',
   },
 ]

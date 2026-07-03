@@ -32,7 +32,7 @@ export default function Footer() {
             <div className="footer__col reveal">
               <h4>Navegación</h4>
               <ul>
-                {nav.map((n) => (
+                {[...nav, { label: 'Contacto', href: '#contacto' }].map((n) => (
                   <li key={n.href}>
                     <a href={n.href}>{n.label}</a>
                   </li>

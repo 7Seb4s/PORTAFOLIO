@@ -137,9 +137,9 @@
   font-family: var(--font-head);
   font-size: 0.74rem;
   font-weight: 600;
-  color: var(--sage);
+  color: var(--navy);
   background: var(--sage-soft);
-  border: 1px solid rgba(59, 122, 103, 0.2);
+  border: 1px solid rgba(20, 33, 61, 0.14);
   padding: 4px 11px;
   border-radius: 999px;
 }
